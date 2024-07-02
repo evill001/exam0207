@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Document{% endblock %}</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    {% if user.is_authenticated %}
+                    <li class="nav__item"><a href="{% url 'logout' %}" class="btn">Выход</a></li>
+                    <li class="nav__item"><a href="{% url 'create_statement' %}" class="btn">Подать заявление</a></li>
+                    {% else %}
+                        <li class="nav__item"><a href="{% url 'login' %}" class="btn">Вход</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% block content %} {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Нарушений.нет. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

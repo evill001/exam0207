@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.header {
+    background-color: #B22222;
+    color: white;
+    padding: 1em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 1em;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav {
+    margin-left: auto; /* Навигационное меню справа */
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    margin-left: 2em;
+}
+
+.nav__item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    transition: background 0.3s;
+}
+
+.nav__item a:hover {
+    background-color: #FF385B;
+    border-radius: 5px;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper {
+    text-align: center;
+}
+
+.content-title {
+    margin-bottom: 1em;
+    color: #B22222;
+}
+
+.content-subtitle {
+    margin-bottom: 1.5em;
+}
+
+.user-actions {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.user-actions li {
+    margin: 0 1em;
+}
+
+.btn {
+    background-color: #B22222;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #FF385B;
+}
+
+.statements {
+    margin-top: 2em;
+}
+
+.statement {
+    background: #f9f9f9;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form p {
+    margin-bottom: 1em;
+}
+
+.btn-submit {
+    background-color: #B22222;
+    color: white;
+    padding: 0.75em 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 1em auto 0;
+    font-size: 1em;
+}
+
+.btn-submit:hover {
+    background-color: #FF385B;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.main-content {
+    flex: 1;
+}

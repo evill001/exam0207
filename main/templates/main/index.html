@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    {% if user.is_authenticated %}
+        <h2 class="content-title">Вы уже зарегистрированы</h2>
+        <ul class="user-actions">
+            <li><a href="{% url 'logout' %}" class="btn">Выход</a></li>
+            <li><a href="{% url 'create_statement' %}" class="btn">Подать заявление</a></li>
+        </ul>
+
+        <h2 class="content-title">Ваши заявления</h2>
+        <section class="statements">
+            {% if statements %}
+                {% for statement in statements %}
+                    <div class="statement">
+                        <h3>{{ statement.name }}</h3>
+                        <p>{{ statement.description }}</p>
+                        <p>{{ statement.date }}</p>
+                        <p>{{ statement.user }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Нет заявлений</p>
+            {% endif %}
+        </section>
+    {% else %}
+        <h2 class="content-title">Регистрация</h2>
+        <h3 class="content-subtitle">Вы уже зарегистрированы? <a href="{% url 'login' %}">Вход</a></h3>
+        <form method="post" class="form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">Отправить</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
